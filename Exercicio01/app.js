@@ -11,4 +11,5 @@ const fetchPokemon = () => {
         })
 }
 
+
 fetchPokemon()

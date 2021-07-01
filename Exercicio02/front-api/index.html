@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resposta API</title>
+</head>
+
+<body>
+    <script src="">
+        const fetchTemp = () => {
+            const url = `https://localhost:3000/infos`
+            fetch(url)
+                .then(res => res.json())
+                .then(datas => {
+                    console.log(datas)
+                    const body = document.querySelector('body')
+                    body.innerHTML = `
+                        <li>O seu pokemon é: <span>${datas.date}</span></li>
+                        <li>O seu pokemon é: <span>${datas.cityName}</span></li>
+                        <li>O seu pokemon é: <span>${datas.tempFahrenhit}</span></li>    
+                    `
+                    console.log(datas)
+                })
+        }
+        fetchTemp()
+    </script>
+</body>
+
+</html>
